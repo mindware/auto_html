@@ -1,4 +1,4 @@
-AutoHtml.add_filter(:jplayer).with({:title => "JPlayer"}) do |text, options|
+AutoHtml.add_filter(:jplayer).with({}) do |text, options|
   text.gsub(/https?:\/\/.+?\.(mp3|ogg|wav|mp4|webm|flv)(\?\S+)?/i) do |match|
     jplayer = "
     <div class='row'>
@@ -31,9 +31,11 @@ AutoHtml.add_filter(:jplayer).with({:title => "JPlayer"}) do |text, options|
                     </div>
                 </div>
                 <div class='jp-title'>
-                    <ul>
-                        <li>#{:title}</li>
+                    <!--
+                     <ul>
+                        <li></li>
                     </ul>
+                    -->
                 </div>
                 <div class='jp-no-solution'>
                     <span>Update Required</span>
