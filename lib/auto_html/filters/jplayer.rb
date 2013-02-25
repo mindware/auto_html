@@ -1,8 +1,7 @@
 AutoHtml.add_filter(:jplayer).with({}) do |text, options|
   text.gsub(/https?:\/\/.+?\.(mp3|ogg|wav|mp4|webm|flv)(\?\S+)?/i) do |match|
     jplayer = "
-    <div class='row'>
-        <div class='flex-video widescreen centered'>
+
             <div id='jquery_jplayer_1' class='jp-jplayer'></div>
             <div class='jp-type-single'>        
                 <div class='jp-gui jp-interface'>
@@ -16,11 +15,11 @@ AutoHtml.add_filter(:jplayer).with({}) do |text, options|
                     </ul>
                     <div class='jp-progress'>
                         <div class='jp-seek-bar'>
-                        <div class='jp-play-bar'></div>
-                    </div>
-                </div>
-                <div class='jp-volume-bar'>
-                    <div class='jp-volume-bar-value'></div>
+                            <div class='jp-play-bar'></div>
+                        </div>
+                     </div>
+                    <div class='jp-volume-bar'>
+                        <div class='jp-volume-bar-value'></div>
                     </div>
                     <div class='jp-current-time'></div>
                     <div class='jp-duration'></div>
@@ -28,23 +27,19 @@ AutoHtml.add_filter(:jplayer).with({}) do |text, options|
                            <li><a href='javascript:;' class='jp-repeat' tabindex='1' title='repeat'>repeat</a></li>
                            <li><a href='javascript:;' class='jp-repeat-off' tabindex='1' title='repeat off'>repeat off</a></li>
                          </ul>
-                    </div>
-                </div>
-                <div class='jp-title'>
-                    <!--
-                     <ul>
-                        <li></li>
-                    </ul>
-                    -->
-                </div>
-                <div class='jp-no-solution'>
-                    <span>Update Required</span>
-                    To play the media you will need to either update your browser to a recent version or update your <a href='http://get.adobe.com/flashplayer/' target='_blank'>Flash plugin</a>.
-                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class='jp-title'>
+                <!-- 
+                <ul>
+                    <li></li>
+                </ul>
+                 -->
+            </div>
+            <div class='jp-no-solution'>
+                    <span>Update Required</span>
+                    To play the media you will need to either update your browser to a recent version or update your <a href='http://get.adobe.com/flashplayer/' target='_blank'>Flash plugin</a>.
+            </div>    
     "
         
     jplayer_end = "<script>window.onload = function() {
