@@ -51,7 +51,7 @@ AutoHtml.add_filter(:jplayer).with({}) do |text, options|
 	jplayer_end, supplied = jplayer_end + "flv: '#{match}',", supplied + "flav," if text.include? "flv"		
 	jplayer_end, supplied = jplayer_end + "mp4: '#{match}',", supplied + "mp4," if text.include? "mp4"
 	jplayer_end, supplied = jplayer_end + "webm: '#{match}',", supplied + "webm," if text.include? "webm"			
-	jplayer_end += "			}).jPlayer("play");
+	jplayer_end += "			}).jPlayer('play');
 					        },
 					        swfPath: 'http://www.jplayer.org/2.1.0/js',
 					        supplied: '#{supplied}',
