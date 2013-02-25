@@ -42,6 +42,7 @@ AutoHtml.add_filter(:jplayer).with({}) do |text, options|
     jplayer_end = "<script>window.onload = function() {
 					    $('#jquery_jplayer_1').jPlayer({
 					        ready: function(event) {
+                                alert('this worked');
 					            $(this).jPlayer('setMedia', {"
 	supplied = ""
 	jplayer_end, supplied = jplayer_end + "mp3: '#{match}',", supplied + "mp3," if text.include? "mp3"
