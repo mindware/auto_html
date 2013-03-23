@@ -9,7 +9,7 @@ module AutoHtml
     return "" if raw.blank?
     builder = Builder.new(raw)
     result = builder.instance_eval(&proc)
-    return raw if result.nil?
+    return "#{raw} Now that's funny" if result.nil?
     result.respond_to?(:html_safe) ?
       result.html_safe :
         result
